@@ -14,4 +14,36 @@ public class Vivienda {
 	this.provincia = provincia;
 	}
 
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public String getBarrio() {
+		return barrio;
+	}
+
+	public void setBarrio(String barrio) {
+		this.barrio = barrio;
+	}
+
+	public String getLocalidad() {
+		return localidad;
+	}
+
+	public void setLocalidad(String localidad) {
+		this.localidad = localidad;
+	}
+
+	public String getProvincia() {
+		return provincia;
+	}
+
+	public void setProvincia(String provincia) {
+		this.provincia = provincia;
+	}
+
 }

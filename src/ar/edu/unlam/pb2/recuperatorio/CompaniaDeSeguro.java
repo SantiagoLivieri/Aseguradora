@@ -64,9 +64,15 @@ public Poliza getPoliza(Integer numeroPoliza) {
 	return polizaObtenida;
 }
 
-public void denunciarSiniestro(int i) {
+public void denunciarSiniestro(Integer numeroPoliza) throws PolizaInexistente {
 	
-	
+	for (Poliza poliza : polizas) {
+		if(poliza.getNumeroDePoliza().equals(numeroPoliza)) {
+			poliza.setSiniestro(true);
+		}else {
+			throw new PolizaInexistente();
+		}
+	}
 }
 
 }

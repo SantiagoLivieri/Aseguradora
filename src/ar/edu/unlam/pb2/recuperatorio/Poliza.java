@@ -10,6 +10,7 @@ public class Poliza  {
 	private Double prima;
 	private final Double PREMIO_IMP = 1.2;
 	private Boolean siniestro;
+	private Boolean robado;
 
 	
 
@@ -75,12 +76,19 @@ public class Poliza  {
 	protected Boolean getSiniestro() {
 		return siniestro;
 	}
+	
+	public void setSiniestro(Boolean b) {
+		this.siniestro = b;
+		
+	}
 
 	public Boolean fueRobado() {
-		return false;
+	if(getSiniestro().equals(true)) {
+		robado = true;
 	}
+	return robado;
+}
 
-	public Boolean tuvoAlgunAccidente() {
-		return false;
-	}
+
+
 }

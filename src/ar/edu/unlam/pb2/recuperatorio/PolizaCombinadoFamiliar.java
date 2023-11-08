@@ -4,9 +4,14 @@ import java.util.HashMap;
 public class PolizaCombinadoFamiliar extends Poliza implements SegurosDeVida {
 	private HashMap<Persona,TipoDeBeneficiario>beneficiarios;
 	private Vivienda vivienda;
+	private Boolean robado;
+	private Boolean accidente;
+	
 	public PolizaCombinadoFamiliar(Integer numeroDePoliza, Persona asegurado, Double sumaAsegurada, Double prima) {
 		super(numeroDePoliza, asegurado, sumaAsegurada, prima);
 		beneficiarios = new HashMap<Persona,TipoDeBeneficiario>();
+		robado =false;
+		accidente = false;
 	}
 
 	@Override

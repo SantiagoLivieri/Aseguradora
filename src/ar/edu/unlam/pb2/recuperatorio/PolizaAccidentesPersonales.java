@@ -25,6 +25,7 @@ public class PolizaAccidentesPersonales extends Poliza implements SegurosDeVida 
 		return (Integer)beneficiarios.size();
 	}
 
+	
 	public Boolean tuvoAlgunAccidente() {
 		if(getSiniestro().equals(true)) {
 			tuvoAlgunAccidente = true;

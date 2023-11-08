@@ -82,7 +82,7 @@ public class TestSeguros{
 
 	
 	@Test
-	public void queSePuedaDenunciarElRoboDeUnAuto() {
+	public void queSePuedaDenunciarElRoboDeUnAuto() throws PolizaInexistente {
 		Integer numeroDePoliza = 1;
 		CompaniaDeSeguro libra = new CompaniaDeSeguro("Libra");
 		libra.agregarPoliza(new PolizaAccidentesPersonales(numeroDePoliza, new Persona("Pedro", 455647345, 24), 2000000.0, 5000.0));
@@ -90,13 +90,13 @@ public class TestSeguros{
 		
 		libra.denunciarSiniestro(1);
 		
-		assertTrue(libra.getPoliza(1).fueRobado());
+		assertTrue((libra.getPoliza(numeroDePoliza)).fueRobado());
 		
 	}
 	
 		
 	@Test
-	public void queSePuedaDenunciarUnSiniestroParaUnaPolizaDeVida() {
+	public void queSePuedaDenunciarUnSiniestroParaUnaPolizaDeVida() throws PolizaInexistente {
 		Integer numeroDePoliza = 1;
 		CompaniaDeSeguro libra = new CompaniaDeSeguro("Libra");
 	
@@ -104,13 +104,12 @@ public class TestSeguros{
 		
 		libra.denunciarSiniestro(1);
 		
-		assertTrue(libra.getPoliza(1).tuvoAlgunAccidente());
+		assertTrue(((PolizaAccidentesPersonales) libra.getPoliza(1)).tuvoAlgunAccidente());
 		
 	}
 	
-	
 	@Test (expected = PolizaInexistente.class)
-	public void verificarQueNoSePuedaDenunciarUnSiniestroParaUnaPolizaQueNoExista() {
+	public void verificarQueNoSePuedaDenunciarUnSiniestroParaUnaPolizaQueNoExista() throws PolizaInexistente {
 		Integer numeroDePoliza = 1;
 		CompaniaDeSeguro libra = new CompaniaDeSeguro("Libra");
 	
@@ -122,5 +121,5 @@ public class TestSeguros{
 		libra.denunciarSiniestro(5);
 
 	}
-	
+
 }

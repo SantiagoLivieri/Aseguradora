@@ -3,14 +3,14 @@ package ar.edu.unlam.pb2.recuperatorio;
 public class Auto implements BienAsegurado{
 
 	private Double sumaAsegurada;
-	private Integer año;
+	private Integer anio;
 	private String modelo;
 	private String marca;
 
-	public Auto(String marca, String modelo, Integer año, Double sumaAsegurada) {
+	public Auto(String marca, String modelo, Integer anio, Double sumaAsegurada) {
 		this.marca = marca;
 		this.modelo = modelo;
-		this.año = año;
+		this.anio = anio;
 		this.sumaAsegurada = sumaAsegurada;
 	}
 
@@ -22,12 +22,12 @@ public class Auto implements BienAsegurado{
 		this.sumaAsegurada = sumaAsegurada;
 	}
 
-	public Integer getAño() {
-		return año;
+	public Integer getAnio (){
+		return anio;
 	}
 
-	public void setAño(Integer año) {
-		this.año = año;
+	public void setAnio(Integer anio) {
+		this.anio = anio;
 	}
 
 	public String getModelo() {
